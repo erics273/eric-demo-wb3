@@ -9,7 +9,7 @@ public class BufferedWriterExample {
 
         try {
             // create a FileWriter //use appent set to true if you want to append to the file instead of overwrting the contents
-            FileWriter fileWriter = new FileWriter("src/main/resources/text.txt");
+            FileWriter fileWriter = new FileWriter("src/main/resources/flaosdjlasdfklfadkj.txt");
             // create a BufferedWriter
             BufferedWriter bufWriter = new BufferedWriter(fileWriter);
             // write to the file
