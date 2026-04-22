@@ -1,5 +1,6 @@
 package com.pluralsight;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MenusAndSuch {
@@ -44,7 +45,14 @@ public class MenusAndSuch {
 
     //handle the work related to viewing inventory
     public static void viewInventory(){
-        System.out.println("here is the inventory");
+        ArrayList<Product> productsList = getInventory();
+
+        for (int i = 0; i < productsList.size(); i++) {
+            //so i don't need the poopList.get(i) a 100 times lets assign it to p
+            Product p = productsList.get(i);
+            System.out.printf("id: %d %s - Price: $%.2f%n",
+                    p.getId(), p.getName(), p.getPrice());
+        }
     }
 
     //hand the work related to managing customers
@@ -78,6 +86,18 @@ public class MenusAndSuch {
             }
         }
 
+    }
+
+    public static ArrayList<Product> getInventory() {
+        ArrayList<Product> inventory = new ArrayList<Product>();
+        // this method loads product objects into inventory
+        // and its details are not shown
+
+        inventory.add(new Product(1, "Magic Stuff", 10.00));
+        inventory.add(new Product(2, "Dangerous Stuff", 20.00));
+        inventory.add(new Product(3, "Gross Stuff", 100.00));
+
+        return inventory;
     }
 
 }
