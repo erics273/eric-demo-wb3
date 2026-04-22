@@ -13,6 +13,8 @@ public class ArrayListsExamples {
         kids.add("Brittany");
         kids.add("Zachary");
 
+        kids.set(1, "Brit");
+
         //print out the list
         System.out.println(kids);
 
@@ -21,9 +23,19 @@ public class ArrayListsExamples {
         for (int i = 0; i < kids.size(); i++) {
             //use get() to get it by index
             System.out.println(i + " " + kids.get(i) );
+
+
+
+
+            //manipulate the list to make the names all uppercase
+            kids.set(i, kids.get(i).toUpperCase());
+
         }
 
-        //use the for-each
+        //remove the middle child before we loop over the list again
+        kids.remove(1);
+
+        //use the for-each to loop over he list again
         int i = 1;
         for (String kid : kids){
             System.out.println(i + ". " + kid);
